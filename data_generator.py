@@ -48,12 +48,7 @@ if __name__ == "__main__":
     start_time = time.process_time()
     num_examples = int(25000.0/float(args.num_devices))
     start_count = -1
-    if os.path.isfile(f"retrieval_data_{args.device_id}.json"):
-        with open(f"retrieval_data_{args.device_id}.json") as f:
-            output_dataset = json.load(f)
-            start_count = output_dataset[-1]['file_index']
-            for item in output_dataset:
-                num_examples -= len(item['retrieval_outputs'])
+    ### 바뀐 부분
     while found_examples < num_examples:
         data = next(iter_data)
         if file_counter < start_count:
@@ -65,6 +60,7 @@ if __name__ == "__main__":
         available = check_apis_available(data, gpt_tokenizer)
         test = available.retrieval
         if test:
+            output_dataset = list()
             data_outputs = api_handler.parse_article(data, model, gpt_tokenizer)
             output_dataset.append(
                 {
@@ -73,6 +69,9 @@ if __name__ == "__main__":
                     "retrieval_outputs": data_outputs
                 }
             )
+            output_file = f"retrieval_data_{args.device_id}_{file_counter}.json"
+            with open(output_file, 'w') as f:
+                json.dump(output_dataset, f, indent=2)
             prev_found = found_examples
             found_examples += len(output_dataset[-1]["retrieval_outputs"])
             eta_s = (num_examples - found_examples) * (time.process_time()-start_time) / max(1, found_examples)
@@ -81,10 +80,49 @@ if __name__ == "__main__":
             eta_m = eta_m - (eta_h*60)
             eta_s = eta_s - ((eta_m*60) + (eta_h*60*60))
             print(f"Found: {found_examples}/{num_examples}, ETA: {eta_h}H:{eta_m}M:{eta_s}s")
-            if found_examples//100 > prev_found//100:
-                with open(f"retrieval_data_{args.device_id}.json", 'w') as f:
-                    json.dump(output_dataset, f, indent=2)
             counter += 1
         file_counter += 1
-    with open(f"retrieval_data_{args.device_id}.json", 'w') as f:
+    with open(output_file, 'w') as f:
         json.dump(output_dataset, f, indent=2)
+
+### 기존의 부분
+    # if os.path.isfile(f"retrieval_data_{args.device_id}.json"):
+    #     with open(f"retrieval_data_{args.device_id}.json") as f:
+    #         output_dataset = json.load(f)
+    #         start_count = output_dataset[-1]['file_index']
+    #         for item in output_dataset:
+    #             num_examples -= len(item['retrieval_outputs'])
+    # while found_examples < num_examples:
+    #     data = next(iter_data)
+    #     if file_counter < start_count:
+    #         file_counter += 1
+    #         continue
+    #     if file_counter % args.num_devices != args.device_id:
+    #         file_counter += 1
+    #         continue
+    #     available = check_apis_available(data, gpt_tokenizer)
+    #     test = available.retrieval
+    #     if test:
+    #         data_outputs = api_handler.parse_article(data, model, gpt_tokenizer)
+    #         output_dataset.append(
+    #             {
+    #                 "file_index": file_counter,
+    #                 "text": data["text"],
+    #                 "retrieval_outputs": data_outputs
+    #             }
+    #         )
+    #         prev_found = found_examples
+    #         found_examples += len(output_dataset[-1]["retrieval_outputs"])
+    #         eta_s = (num_examples - found_examples) * (time.process_time()-start_time) / max(1, found_examples)
+    #         eta_m = eta_s // 60
+    #         eta_h = eta_m // 60
+    #         eta_m = eta_m - (eta_h*60)
+    #         eta_s = eta_s - ((eta_m*60) + (eta_h*60*60))
+    #         print(f"Found: {found_examples}/{num_examples}, ETA: {eta_h}H:{eta_m}M:{eta_s}s")
+    #         if found_examples//100 > prev_found//100:
+    #             with open(f"retrieval_data_{args.device_id}.json", 'w') as f:
+    #                 json.dump(output_dataset, f, indent=2)
+    #         counter += 1
+    #     file_counter += 1
+    # with open(f"retrieval_data_{args.device_id}.json", 'w') as f:
+    #     json.dump(output_dataset, f, indent=2)
