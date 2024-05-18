@@ -2,29 +2,54 @@ name: TOOLFORMER
 channels:
   - defaults
 dependencies:
+  - abseil-cpp=20211102.0=hd77b12b_0
+  - aiohttp=3.9.5=py311h2bbff1b_0
   - annotated-types=0.6.0=py311haa95532_0
   - anyio=4.2.0=py311haa95532_0
   - argon2-cffi=21.3.0=pyhd3eb1b0_0
   - argon2-cffi-bindings=21.2.0=py311h2bbff1b_0
+  - arrow-cpp=14.0.2=ha81ea56_1
   - asttokens=2.0.5=pyhd3eb1b0_0
   - async-lru=2.0.4=py311haa95532_0
   - attrs=23.1.0=py311haa95532_0
+  - aws-c-auth=0.6.19=h2bbff1b_0
+  - aws-c-cal=0.5.20=h2bbff1b_0
+  - aws-c-common=0.8.5=h2bbff1b_0
+  - aws-c-compression=0.2.16=h2bbff1b_0
+  - aws-c-event-stream=0.2.15=hd77b12b_0
+  - aws-c-http=0.6.25=h2bbff1b_0
+  - aws-c-io=0.13.10=h2bbff1b_0
+  - aws-c-mqtt=0.7.13=h2bbff1b_0
+  - aws-c-s3=0.1.51=h2bbff1b_0
+  - aws-c-sdkutils=0.1.6=h2bbff1b_0
+  - aws-checksums=0.1.13=h2bbff1b_0
+  - aws-crt-cpp=0.18.16=hd77b12b_0
+  - aws-sdk-cpp=1.10.55=hd77b12b_0
   - babel=2.11.0=py311haa95532_0
   - beautifulsoup4=4.12.2=py311haa95532_0
+  - blas=1.0=mkl
   - bleach=4.1.0=pyhd3eb1b0_0
+  - boost-cpp=1.82.0=h59b6b97_2
+  - bottleneck=1.3.7=py311hd7041d2_0
   - brotli-python=1.0.9=py311hd77b12b_8
   - bzip2=1.0.8=h2bbff1b_6
+  - c-ares=1.19.1=h2bbff1b_0
   - ca-certificates=2024.3.11=haa95532_0
   - certifi=2024.2.2=py311haa95532_0
   - cffi=1.16.0=py311h2bbff1b_1
   - charset-normalizer=2.0.4=pyhd3eb1b0_0
   - colorama=0.4.6=py311haa95532_0
   - comm=0.2.1=py311haa95532_0
+  - datasets=2.12.0=py311haa95532_0
   - debugpy=1.6.7=py311hd77b12b_0
   - decorator=5.1.1=pyhd3eb1b0_0
   - defusedxml=0.7.1=pyhd3eb1b0_0
+  - dill=0.3.6=py311haa95532_0
   - distro=1.9.0=py311haa95532_0
   - executing=0.8.3=pyhd3eb1b0_0
+  - gflags=2.2.2=hd77b12b_1
+  - glog=0.5.0=hd77b12b_1
+  - grpc-cpp=1.48.2=hfe90ff0_1
   - h11=0.14.0=py311haa95532_0
   - httpcore=1.0.2=py311haa95532_0
   - httpx=0.26.0=py311haa95532_0
@@ -52,26 +77,44 @@ dependencies:
   - jupyterlab_server=2.25.1=py311haa95532_0
   - jupyterlab_widgets=3.0.10=py311haa95532_0
   - krb5=1.20.1=h5b6d351_0
+  - libboost=1.82.0=h3399ecb_2
+  - libbrotlicommon=1.0.9=h2bbff1b_8
+  - libbrotlidec=1.0.9=h2bbff1b_8
+  - libbrotlienc=1.0.9=h2bbff1b_8
   - libclang=14.0.6=default_hb5a9fac_1
   - libclang13=14.0.6=default_h8e68704_1
+  - libcurl=8.7.1=h86230a5_0
+  - libevent=2.1.12=h56d1f94_1
   - libffi=3.4.4=hd77b12b_1
   - libpng=1.6.39=h8cc25b3_0
   - libpq=12.17=h906ac69_0
+  - libprotobuf=3.20.3=h23ce68f_0
   - libsodium=1.0.18=h62dcd97_0
+  - libssh2=1.11.0=h291bd65_0
+  - libthrift=0.15.0=h4364b78_2
   - lz4-c=1.9.4=h2bbff1b_1
   - markupsafe=2.1.3=py311h2bbff1b_0
   - matplotlib-inline=0.1.6=py311haa95532_0
   - mistune=2.0.4=py311haa95532_0
+  - mkl-service=2.4.0=py311h2bbff1b_1
+  - mkl_fft=1.3.8=py311h2bbff1b_0
+  - mkl_random=1.2.4=py311h59b6b97_0
+  - multiprocess=0.70.14=py311haa95532_0
   - nbclient=0.8.0=py311haa95532_0
   - nbconvert=7.10.0=py311haa95532_0
   - nbformat=5.9.2=py311haa95532_0
   - nest-asyncio=1.6.0=py311haa95532_0
   - notebook=7.0.8=py311haa95532_0
   - notebook-shim=0.2.3=py311haa95532_0
+  - numexpr=2.8.7=py311h1fcbade_0
+  - numpy=1.26.4=py311hdab7c0b_0
+  - numpy-base=1.26.4=py311hd01c5d8_0
   - openai=1.25.0=py311haa95532_0
   - openssl=3.0.13=h2bbff1b_1
+  - orc=1.7.4=h623e30f_1
   - overrides=7.4.0=py311haa95532_0
   - packaging=23.2=py311haa95532_0
+  - pandas=2.2.1=py311hea22821_0
   - pandocfilters=1.5.0=pyhd3eb1b0_0
   - parso=0.8.3=pyhd3eb1b0_0
   - pip=24.0=py311haa95532_0
@@ -82,6 +125,7 @@ dependencies:
   - prompt_toolkit=3.0.43=hd3eb1b0_0
   - psutil=5.9.0=py311h2bbff1b_0
   - pure_eval=0.2.2=pyhd3eb1b0_0
+  - pyarrow=14.0.2=py311h847bd2a_0
   - pycparser=2.21=pyhd3eb1b0_0
   - pydantic=2.5.3=py311haa95532_0
   - pydantic-core=2.14.6=py311h062c2fa_0
@@ -93,6 +137,8 @@ dependencies:
   - python-dateutil=2.9.0post0=py311haa95532_0
   - python-fastjsonschema=2.16.2=py311haa95532_0
   - python-json-logger=2.0.7=py311haa95532_0
+  - python-tzdata=2023.3=pyhd3eb1b0_0
+  - python-xxhash=2.0.2=py311h2bbff1b_1
   - pytz=2024.1=py311haa95532_0
   - pywin32=305=py311h2bbff1b_0
   - pywinpty=2.0.10=py311h5da7b33_0
@@ -101,8 +147,10 @@ dependencies:
   - qt-main=5.15.2=h19c9488_10
   - qtconsole=5.5.1=py311haa95532_0
   - qtpy=2.4.1=py311haa95532_0
+  - re2=2022.04.01=hd77b12b_0
   - referencing=0.30.2=py311haa95532_0
   - requests=2.31.0=py311haa95532_1
+  - responses=0.13.3=pyhd3eb1b0_0
   - rfc3339-validator=0.1.4=py311haa95532_0
   - rfc3986-validator=0.1.1=py311haa95532_0
   - rpds-py=0.10.6=py311h062c2fa_0
@@ -110,6 +158,7 @@ dependencies:
   - setuptools=69.5.1=py311haa95532_0
   - sip=6.7.12=py311hd77b12b_0
   - six=1.16.0=pyhd3eb1b0_1
+  - snappy=1.1.10=h6c2663c_1
   - sniffio=1.3.0=py311haa95532_0
   - soupsieve=2.5=py311haa95532_0
   - sqlite=3.45.3=h2bbff1b_0
@@ -124,6 +173,7 @@ dependencies:
   - typing_extensions=4.11.0=py311haa95532_0
   - tzdata=2024a=h04d1e81_0
   - urllib3=2.2.1=py311haa95532_0
+  - utf8proc=2.6.1=h2bbff1b_1
   - vc=14.2=h2eaa2aa_1
   - vs2015_runtime=14.29.30133=h43f2093_3
   - wcwidth=0.2.5=pyhd3eb1b0_0
@@ -133,18 +183,19 @@ dependencies:
   - widgetsnbextension=4.0.10=py311haa95532_0
   - win_inet_pton=1.1.0=py311haa95532_0
   - winpty=0.4.3=4
+  - xxhash=0.8.0=h2bbff1b_3
   - xz=5.4.6=h8cc25b3_1
   - yaml=0.2.5=he774522_0
   - zeromq=4.3.5=hd77b12b_0
   - zlib=1.2.13=h8cc25b3_1
   - zstd=1.5.5=hd43e919_2
   - pip:
-      - aiohttp==3.9.5
       - aiosignal==1.3.1
       - backports-tarfile==1.1.1
       - boto3==1.34.108
       - botocore==1.34.108
       - cachetools==5.3.3
+      - click==8.1.7
       - cohere==5.5.0
       - dataclasses-json==0.6.6
       - fastavro==1.9.4
@@ -160,19 +211,25 @@ dependencies:
       - httplib2==0.22.0
       - httpx-sse==0.4.0
       - huggingface-hub==0.23.0
+      - intel-openmp==2021.4.0
       - jaraco-context==5.3.0
       - jmespath==1.0.1
+      - joblib==1.4.2
       - jsonpatch==1.33
       - jsonpointer==2.4
       - langchain==0.2.0
+      - langchain-community==0.2.0
       - langchain-core==0.2.0
       - langchain-text-splitters==0.2.0
       - langsmith==0.1.59
       - marshmallow==3.21.2
+      - mkl==2021.4.0
       - more-itertools==10.2.0
+      - mpmath==1.3.0
       - multidict==6.0.5
       - mypy-extensions==1.0.0
-      - numpy==1.26.4
+      - networkx==3.3
+      - nltk==3.8.1
       - orjson==3.10.3
       - proto-plus==1.23.0
       - protobuf==4.25.3
@@ -184,8 +241,11 @@ dependencies:
       - s3transfer==0.10.1
       - safetensors==0.4.3
       - sqlalchemy==2.0.30
+      - sympy==1.12
+      - tbb==2021.12.0
       - tenacity==8.3.0
       - tokenizers==0.19.1
+      - torch==2.3.0
       - transformers==4.41.0
       - types-requests==2.31.0.20240406
       - typing-inspect==0.9.0
